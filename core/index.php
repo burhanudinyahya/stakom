@@ -1,0 +1,2 @@
+<?php
+//silent iku emas
