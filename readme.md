@@ -7,10 +7,10 @@ Stakom mini gratis dan masih terus dalam pengembangan dalam latihan-latihan yang
 ## Petunjuk Singkat
 
 Untuk bisa mencoba applikasi ini Anda bisa ikuti langkah mudah berikut :
-1. Download dan letakan di folder root server local
-2. Akses dengan localhost/stakom/install/
-3. Login dengan username : admin dan password : admin
-4. Enjoy dan oprek
+* Download dan letakan di folder root server local
+* Akses dengan localhost/stakom/install/
+* Login dengan username : admin dan password : admin
+* Enjoy dan oprek
 
 ## Kontribusi
 
