@@ -18,19 +18,39 @@ if($_POST['type'] == 'status' && $_POST["isi_status"] != ''){
     $date = date('d F \a\t H:i', time());
     $title = date('l, d F Y \a\t H:i', time());
 
-    echo "<div id='jml_kom_$last_id' class='0'></div>";
-    echo "<div id='isi_daftar_status_$last_id'>";
-    echo "<div class='status' data-id='$last_id'>";
-    echo "<a href='#'><img src='./img/burhan.jpg'></a>";
-    echo "<p class='author'><a href='#'>Burhaudin Yahya</a></p>";
-    echo "<p class='date'>";
-    echo "<a style='color:#90949c;' title='$title'>$date</a>";
-    echo "<span id='$last_id' class='rei'> . <a id='$last_id' class='hapus_status' href='#' onclick='Confirm.render(\"Apakah anda yakin akan hapus status ini?\",\"delete_status\",\"status_$last_id\")'>Hapus</a> . ";
-    echo "<a id='$last_id' class='edit_status' href='#'>Edit</a></span></p>";
-    echo "<p>$status</p>";
-    echo "</div>";
-    echo "<div class='komentar'><div id='daftar_komentar_$last_id'></div><div class='post-komen'><div class='img-author'><img src='./img/burhan.jpg'></div><div class='komen-author'><textarea class='$last_id' name='textarea_komentar' id='textarea_komen' placeholder='Write a comment...'></textarea></div></div></div></div>";
-    // }
+    echo "<div id='jml_kom_$last_id' class='0'></div>
+          <div id='isi_daftar_status_$last_id'>
+            <div class='status' data-id='$last_id'>
+              <a href='#'><img src='./img/burhan.jpg'></a>
+              <p class='author'><a href='#'>Burhaudin Yahya</a></p>
+              <p class='meta_status'>
+                <a class='meta_date' title='$title'>$date</a>
+                <span id='$last_id' class='rei'> .
+                <a id='$last_id' class='hapus_status'>Hapus</a> .
+                <a id='$last_id' class='edit_status'>Edit</a>
+                </span>
+              </p>
+              <p>$status</p>
+              <div class='action_status'>
+                <div id='suka_$last_id' class='suka_status'><a id='$last_id' class='suka_link'>Suka</a></div>
+                <div id='komen_$last_id' class='komen_status'><a id='$last_id' class='komen_link'>Komentar</a></div>
+              </div>
+            </div>
+            <div class='komentar'>
+              <div class='hasil_suka' id='hasil_$last_id' >
+                <span id='suka_$last_id' class='jumlah_suka'>
+                <a id='$last_id' class='nama_link'>Burhanudin Yahya</a>
+                </span>
+              </div>
+              <div id='daftar_komentar_$last_id'></div>
+              <div class='post-komen'>
+                <div class='img-author'><img src='./img/burhan.jpg'></div>
+                <div class='komen-author'>
+                  <textarea class='textarea_komen_$last_id' name='textarea_komentar' id='textarea_komen' placeholder='Write a comment...'></textarea>
+                </div>
+              </div>
+            </div>
+          </div>";
   }else{
     echo "errrrror bro";
   }
@@ -86,19 +106,27 @@ if($_POST['type'] == 'insert' && $_POST["isi_komentar"] != ''){
     $date_k = date('d F \a\t H:i', time());
     $title_dk = date('l, d F Y \a\t H:i', time());
 
-    echo "<div id='komen_$last_id'><div class='post-komen' data-id='$last_id'>";
-      echo "<div class='img-author'><a href='#'><img src='./img/burhan.jpg'/></a></div>";
-      echo "<div class='komen-author'>";
-        echo "<a href='#' class='author-komentar'>Burhaudin Yahya</a>";
-        echo "<div class='meta' id='$last_id'>
-                <a href='#' class='hapus_komen' data-id='$last_id' onclick='Confirm.render(\"Apakah anda yakin akan hapus komen ini?\",\"delete_komentar\",\"komentar_$last_id\")'>Hapus</a>
-                <a href='#' class='edit_komen' data-id='$last_id'>Edit</a>
-              </div>";
-        echo "<p id='par_$last_id' class='komentar_text' data-id='$last_id'>$komentar</p>";
-        echo "<a href='#' class='balas_komen' data-id='$last_id'>Balas</a> . ";
-        echo "<a class='balas_komen' style='color:#90949c;' title='$title_dk' class='date'>$date_k</a>";
-      echo "</div>";
-    echo "</div></div>";
+    echo "<div id='komen_$last_id'>
+            <div class='post-komen' data-id='$last_id'>
+              <div class='img-author'>
+                <a href='#'><img src='./img/burhan.jpg'/></a>
+              </div>
+              <div class='komen-author'>
+                <a href='#' class='author-komentar'>Burhaudin Yahya</a>
+                <div class='meta_komen' id='$last_id'>
+                  <a class='hapus_komen' data-status='$id_stts' data-id='$last_id'>Hapus</a>
+                  <a class='edit_komen' data-id='$last_id'>Edit</a>
+                </div>
+                <p id='par_$last_id' class='komentar_text' data-id='$last_id'>$komentar</p>
+                <a class='suka_komen' data-id='$last_id'>Suka</a> .
+                <a class='balas_komen' data-id='$last_id'>Balas</a> .
+                <span id='suka_balas_$last_id' class='jumlah_suka_balas'>
+                  <a class='suka_balas' data-id='$last_id'>1 . </a>
+                </span>
+                <a title='$title_dk' class='date'>$date_k</a>
+              </div>
+            </div>
+          </div>";
   }else{
     printf("Error: %s\n", mysqli_error($link));
   }
@@ -107,11 +135,11 @@ if($_POST['type'] == 'insert' && $_POST["isi_komentar"] != ''){
 
 //===========DELETE KOMENTAR =================
 if($_POST['type'] == 'del_komentar'){
-
-  // mysqli_query($link, "UPDATE tb_status SET jumlah_komentar='$jml_kom' WHERE id='$id_stts'");
-
+  // Update jumlah_komentar yang sudah dikurangi 1
+  mysqli_query($link, "UPDATE tb_status SET jumlah_komentar=".$_POST['jml_kom']." WHERE id=".$_POST['id_status']);
+  // Delete komentar
   $query = "DELETE FROM tb_komentar WHERE id=".$_POST['id_komen'];
-
+  //jika berhasil keluarkan 1 else -1
   if(mysqli_query($link, $query)){
     echo "1";
   }else{
@@ -128,7 +156,7 @@ if($_POST['type'] == 'update' && $_POST["isi_komen"] != ''){
   $isi = toPhar($isi);
 
   $query = "UPDATE tb_komentar
-            SET isi_komentar ='$isi'
+            SET isi_komentar ='$isi', tanggal_update = now()
             WHERE id=".$_POST['id_komen'];
 
   if(mysqli_query($link, $query)){

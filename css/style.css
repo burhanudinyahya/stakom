@@ -3,10 +3,15 @@ body {
   font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
   font-size: 14px;
   line-height: 1.34;
-  /*letter-spacing: .02em;*/
   color: #1d2129;
   width: 500px;
   margin: 20px auto;
+}
+
+body.alert-open{
+  overflow:hidden;
+  position: fixed!important
+  height: 100%;
 }
 
 h1 {
@@ -23,6 +28,21 @@ h1 {
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
 }
 
+h1.header-login {
+  text-align: center;
+  margin: 100px auto 0;
+  padding: 10px 20px;
+  width: 60%;
+  line-height: 1.34;
+  text-transform: capitalize;
+  background-color: #4267b2;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #e7e1f5;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+}
+
 a {
   text-decoration: none;
   color:#365899;
@@ -32,6 +52,58 @@ a:hover {
   cursor: pointer;
   text-decoration: underline;
   color:#365899;
+}
+
+.login {
+  margin: 0 auto;
+  width: 60%;
+  background-color: #fff;
+  padding: 20px 20px 0 20px;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  border-top: none;
+  overflow: auto;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  border-radius: 3px;
+}
+
+/*#submit_status{
+  padding: 5px 15px;
+}*/
+
+.btn-login {
+  font-size: .9em;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 0 10px 0px 10px;
+  margin: 0 0 20px 0;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  overflow: auto;
+}
+
+input.btn-login {
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: .9em;
+  cursor: pointer;
+  background-color: #4267b2;
+  border: 1px solid #4267b2;
+  border-radius: 2px;
+  display: block;
+  /*float: right;*/
 }
 
 .kolom_status {
@@ -54,6 +126,7 @@ a:hover {
 
 textarea#textarea_status {
   position: absolute;
+  font-size:14px;
   width: 420px;
   margin: 15px 0 0 0;
   display: inline;
@@ -86,7 +159,7 @@ p.author {
   padding-bottom: 0px;
 }
 
-p.date {
+p.meta_status {
   line-height: 1.34;
   position: absolute;
   display: inline;
@@ -94,6 +167,120 @@ p.date {
   word-wrap: break-word;
   margin:30px 0 0 10px;
   padding-bottom: 0px;
+}
+
+a.meta_date {
+  color:#90949c;
+}
+
+.action_status {
+  /*display: none;*/
+  margin-top: 5px;
+  padding: 5px 0;
+  border-top: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+}
+
+.hasil_suka {
+  display: none;
+  margin-top: 5px;
+  padding: 5px 0 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+a.suka_link, a.komen_link {
+  font-weight:lighter;
+  font-size: .9em;
+  color: #7f7f7f;
+  margin-right: 20px;
+  padding-left: 20px;
+}
+
+a.unsuka_link {
+  font-weight:lighter;
+  font-size: .9em;
+  color: #4267b2;
+  margin-right: 20px;
+  padding-left: 20px;
+}
+
+div.suka_status {
+  width:15px;
+  display: inline-block;
+  margin-right: 50px;
+  background-image: url(../img/sukom.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 0 -129px;
+}
+
+div.unsuka_status {
+  width:15px;
+  display: inline-block;
+  margin-right: 50px;
+  background-image: url(../img/sukom.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -30px -129px;
+}
+
+a.nama_link {
+  position: absolute;
+  padding: 3px 0 0 5px;
+  font-weight:lighter;
+  font-size: .9em;
+  color: #4267b2;
+}
+
+span.jumlah_suka {
+  background-image: url(../img/likers.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -127px -35px;
+}
+
+span.jumlah_suka::before {
+  content:attr(backgound-image);
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+a.suka_balas {
+  position: absolute;
+  padding: 1px 0 0 5px;
+  font-weight:lighter;
+  font-size: .9em;
+  color: #4267b2;
+}
+
+a.suka_balas:hover {
+  text-decoration: none;
+}
+
+span.jumlah_suka_balas {
+  cursor: pointer;
+  display: none;
+  background-image: url(../img/liker2.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -20px -293px;
+  margin-right: 22px;
+}
+
+span.jumlah_suka_balas::before {
+  content:attr(backgound-image);
+  width: 9px;
+  display: inline-block;
+}
+
+div.komen_status {
+  width:15px;
+  display: inline-block;
+  background-image: url(../img/sukom.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -49px -112px;
 }
 
 .komentar {
@@ -118,11 +305,10 @@ p.date {
 }
 
 p.komentar_text {
-  /*display: inline-block;*/
   padding-bottom: 0;
   margin-top: 0;
   line-height: 1.34;
-
+  padding-bottom: 5px;
 }
 
 a.author-komentar {
@@ -148,7 +334,6 @@ a.author-komentar:hover {
   margin: 0px 10px 0 0;
 }
 .img-author img {
-  /*float: left;*/
   margin-right: 10px;
   width: 30px;
   height: 30px;
@@ -157,7 +342,6 @@ a.author-komentar:hover {
 .komen-author {
   width: 428px;
   float: left;
-  /*margin-bottom: 10px;*/
 }
 
 .rei {
@@ -168,12 +352,10 @@ a.hapus_komen, a.hapus_status{
   color: #b16b2b;
 }
 
-.meta {
-  /*display: inline-block;*/
+.meta_komen {
   display: none;
   float: right;
   text-align: right;
-  /*transition: .5s;*/
 }
 
 textarea {
@@ -208,9 +390,12 @@ p {
   padding-bottom: 10px;
 }
 
-.balas_komen, .edit_komen, .hapus_komen, .cancel_komen {
-  /*padding-top: 10px;*/
+.balas_komen, .suka_komen, .unsuka_komen, .edit_komen, .hapus_komen, .cancel_komen, .date {
   font-size: .9em;
+}
+
+.date, a.date:hover {
+  color:#90949c;
 }
 
 #submit_status{
@@ -238,9 +423,7 @@ button {
   border-radius: 2px;
   display: block;
   float: right;
-  /*padding: 0;*/
   margin: 10px 0;
-  /*margin-bottom: 10px;*/
 }
 
 #dialogoverlay{
@@ -251,14 +434,14 @@ button {
 	left: 0px;
 	background: #000;
 	width: 100%;
-	z-index: 10;
+	z-index: 10000;
 }
 
 #dialogbox{
 	display: none;
 	position: fixed;
 	width:450px;
-	z-index: 10;
+	z-index: 10000;
 }
 
 .btn_alert {
@@ -275,7 +458,36 @@ button.btn_alert_cancel {
 
 }
 
-#dialogbox > div{ background:none; }
-#dialogbox > div > #dialogboxhead{ border-radius:2px 2px 0 0; border-top: 1px solid; border-color: #e5e6e9 #dfe0e4 #d0d1d5;background: #f6f7f9; font-size:inherit; font-weight: 600;padding:10px; color:#000; }
-#dialogbox > div > #dialogboxbody{ background: #fff; padding:20px; color:#333; border-top: 1px solid; border-color: #e5e6e9 #dfe0e4 #d0d1d5;}
-#dialogbox > div > #dialogboxfoot{ overflow: auto;box-shadow: 0px 20px 10px -20px rgba(0, 0, 0, .75);border-radius:0 0 2px 2px;background: #fff; padding:10px; text-align:right; border-top: 1px solid; border-color: #e5e6e9 #dfe0e4 #d0d1d5;}
+#dialogbox > div {
+  background:none;
+}
+
+#dialogbox > div > #dialogboxhead {
+  border-radius:2px 2px 0 0;
+  border-top: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  background: #f6f7f9;
+  font-size:inherit;
+  font-weight: 600;
+  padding:10px;
+  color:#000;
+}
+
+#dialogbox > div > #dialogboxbody {
+  background: #fff;
+  padding:20px;
+  color:#333;
+  border-top: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+}
+
+#dialogbox > div > #dialogboxfoot {
+  overflow: auto;
+  box-shadow: 0px 20px 10px -20px rgba(0, 0, 0, .75);
+  border-radius:0 0 2px 2px;
+  background: #fff;
+  padding:10px;
+  text-align:right;
+  border-top: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+}

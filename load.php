@@ -15,7 +15,7 @@ require_once( ABSPATH . FUNC . 'custom.php' );
 
 $_SESSION['user'] = 1;
 
-if(! isset($_SESSION['user'])){
+if( ! isset($_SESSION['user']) ){
 	header ('Location: login.php');
 }
 
