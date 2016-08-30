@@ -23,7 +23,7 @@ if( ! isset($_SESSION['user']) ){
 	</div>
 </div>
 
-<h1>Status <a class="logout" href="login.php?action=logout">Keluar</a></h1>
+<h1>Stakom-Mini <a class="logout" href="login.php?action=logout">Keluar</a></h1>
 <div class="kolom_status">
   <img src="./assets/img/burhan.jpg"/>
   <textarea name="textarea_status" id="textarea_status" placeholder="What's on your mind?"></textarea>

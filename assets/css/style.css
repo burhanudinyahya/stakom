@@ -236,7 +236,7 @@ div.suka_status {
   background-image: url(../img/sukom.png);
   background-repeat: no-repeat;
   background-size: auto;
-  background-position: 0 -129px;
+  background-position: 0 -128px;
 }
 
 div.unsuka_status {
@@ -246,7 +246,7 @@ div.unsuka_status {
   background-image: url(../img/sukom.png);
   background-repeat: no-repeat;
   background-size: auto;
-  background-position: -30px -129px;
+  background-position: -30px -128px;
 }
 
 a.nama_link {
@@ -305,7 +305,7 @@ div.komen_status {
   background-image: url(../img/sukom.png);
   background-repeat: no-repeat;
   background-size: auto;
-  background-position: -49px -112px;
+  background-position: -49px -111px;
 }
 
 .komentar {

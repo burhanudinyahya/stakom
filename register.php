@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
       }
     }
   }else{
-    $message = 'Semua harus diisi';
+    $message = 'Semua kolom harus diisi';
   }
 }
 
