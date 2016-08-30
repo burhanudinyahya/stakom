@@ -1,5 +1,8 @@
-## Stakom Mini
+# Stakom Mini
+## Demo
+[Demo Stakom](http://geehanzlab.com/demo/stakom)
 
+## Into
 Stakom mini adalah aplikasi status dan komentar yang dibuat dengan tujuan hanya sebagai latihan. User Interface (UI) dibuat mirip facebook dengan menggunakan teknologi Jquery AJAX.
 
 Stakom mini gratis dan masih terus dalam pengembangan dalam latihan-latihan yang selalu di update.
