@@ -21,7 +21,7 @@ if($_POST['type'] == 'status' && $_POST["isi_status"] != ''){
     echo "<div id='jml_kom_$last_id' class='0'></div>
           <div id='isi_daftar_status_$last_id'>
             <div class='status' data-id='$last_id'>
-              <a href='#'><img src='./img/burhan.jpg'></a>
+              <a href='#'><img src='./assets/img/burhan.jpg'></a>
               <p class='author'><a href='#'>Burhaudin Yahya</a></p>
               <p class='meta_status'>
                 <a class='meta_date' title='$title'>$date</a>
@@ -44,7 +44,7 @@ if($_POST['type'] == 'status' && $_POST["isi_status"] != ''){
               </div>
               <div id='daftar_komentar_$last_id'></div>
               <div class='post-komen'>
-                <div class='img-author'><img src='./img/burhan.jpg'></div>
+                <div class='img-author'><img src='./assets/img/burhan.jpg'></div>
                 <div class='komen-author'>
                   <textarea class='textarea_komen_$last_id' name='textarea_komentar' id='textarea_komen' placeholder='Write a comment...'></textarea>
                 </div>
@@ -109,7 +109,7 @@ if($_POST['type'] == 'insert' && $_POST["isi_komentar"] != ''){
     echo "<div id='komen_$last_id'>
             <div class='post-komen' data-id='$last_id'>
               <div class='img-author'>
-                <a href='#'><img src='./img/burhan.jpg'/></a>
+                <a href='#'><img src='./assets/img/burhan.jpg'/></a>
               </div>
               <div class='komen-author'>
                 <a href='#' class='author-komentar'>Burhaudin Yahya</a>

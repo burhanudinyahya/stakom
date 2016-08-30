@@ -1,12 +1,17 @@
 <?php
 require_once ('load.php');
+
+if( ! isset($_SESSION['user']) ){
+	header ('Location: login.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Stakom Mini</title>
-<link rel="stylesheet" href="./css/style.css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="./assets/css/style.css" media="screen" charset="utf-8">
 </head>
 <body>
 <div id="dialogoverlay"></div>
@@ -18,9 +23,9 @@ require_once ('load.php');
 	</div>
 </div>
 
-<h1>Status</h1>
+<h1>Status <a class="logout" href="login.php?action=logout">Keluar</a></h1>
 <div class="kolom_status">
-  <img src="./img/burhan.jpg"/>
+  <img src="./assets/img/burhan.jpg"/>
   <textarea name="textarea_status" id="textarea_status" placeholder="What's on your mind?"></textarea>
 </div>
 <div class="btn_post">
@@ -42,7 +47,7 @@ require_once ('load.php');
   <div id="isi_daftar_status_<?= $id_status; ?>">
 
     <div class="status" data-id="<?= $id_status; ?>">
-      <a href="#"><img src="./img/burhan.jpg"></a>
+      <a href="#"><img src="./assets/img/burhan.jpg"></a>
       <p class="author"><a href="#">Burhaudin Yahya</a></p>
       <p class="meta_status">
         <a class="meta_date" title="<?= $title_date ?>"><?= $date_in ?></a>
@@ -75,7 +80,7 @@ require_once ('load.php');
         <div id="komen_<?= $comment['id']; ?>">
           <div class="post-komen" data-id="<?= $comment['id']; ?>">
             <div class="img-author">
-              <a href="#"><img src="./img/burhan.jpg"></a>
+              <a href="#"><img src="./assets/img/burhan.jpg"></a>
             </div>
             <div class="komen-author">
               <a href="#" class="author-komentar">Burhaudin Yahya</a>
@@ -100,7 +105,7 @@ require_once ('load.php');
 
       <div class="post-komen">
         <div class="img-author">
-          <img src="./img/burhan.jpg" alt="" />
+          <img src="./assets/img/burhan.jpg" alt="" />
         </div>
         <div class="komen-author">
           <textarea class="textarea_komen_<?= $id_status; ?>" name="textarea_komentar" id="textarea_komen" placeholder="Write a comment..."></textarea>
@@ -111,8 +116,8 @@ require_once ('load.php');
   </div>
   <?php } ?>
 </div>
-<script src="./jquery/jquery.min.js"></script>
-<script src="./js/ajax.js"></script>
+<script src="./assets/jquery/jquery.min.js"></script>
+<script src="./assets/js/ajax.js"></script>
 
 </body>
 </html>

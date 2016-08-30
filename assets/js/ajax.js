@@ -114,7 +114,7 @@ $('#submit_status').on('click',function(){
   }else{
     $.ajax({
             method  : "POST",
-            url     : "./function/komentar_ajax.php",
+            url     : "././functions/komentar_ajax.php",
             data    : { isi_status : isi,
                         type:"status"
                       },
@@ -152,7 +152,7 @@ $(document).on('keypress','#textarea_komen',function(event){
                         });
       $.ajax({
               method  : "POST",
-              url     : "./function/komentar_ajax.php",
+              url     : "././functions/komentar_ajax.php",
               data    : {
                           isi_komentar : isi,
                           id_status:id,
@@ -225,7 +225,7 @@ $(document).on('click','.edit_komen',function(){
         $('.cancel_komen').replaceWith(btn_edit);
         $.ajax({
                 method  : "POST",
-                url     : "./function/komentar_ajax.php",
+                url     : "././functions/komentar_ajax.php",
                 data    : {
                             id_komen:id,
                             isi_komen:isi,
@@ -248,7 +248,7 @@ function deleteStatus(id){
 	var id = id.replace("status_", "");
   $.ajax({
           method  : "POST",
-          url     : "./function/komentar_ajax.php",
+          url     : "././functions/komentar_ajax.php",
           data    : {
                       id_status:id,
                       type:"del_status"
@@ -271,7 +271,7 @@ function deleteKomentar(id,id_stts){
 
   $.ajax({
           method: "POST",
-          url: "./function/komentar_ajax.php",
+          url: "././functions/komentar_ajax.php",
           data: {
                   id_komen:id,
                   id_status:id_stts,
