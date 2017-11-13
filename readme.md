@@ -1,8 +1,11 @@
 # Stakom Mini
-## Demo
-[Demo Stakom](http://geehanzlab.com/demo/stakom/)
 
-## Into
+## Demo
+
+[Demo Stakom](http://x-lab.com/demo/stakom/)
+
+## Intro
+
 Stakom mini adalah aplikasi status dan komentar yang dibuat dengan tujuan hanya sebagai latihan. User Interface (UI) dibuat mirip facebook dengan menggunakan teknologi Jquery AJAX.
 
 Stakom mini gratis dan masih terus dalam pengembangan dalam latihan-latihan yang selalu di update.
@@ -11,7 +14,7 @@ Stakom mini gratis dan masih terus dalam pengembangan dalam latihan-latihan yang
 
 Untuk bisa mencoba applikasi ini Anda bisa ikuti langkah mudah berikut :
 * Download dan letakan di folder root server local
-* Akses dengan localhost/stakom/install/
+* Sesuaikan database nya
 * Login dengan username : admin dan password : admin
 * Enjoy dan oprek
 
